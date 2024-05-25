@@ -13,7 +13,7 @@ const OTP = require('./models/OTP');
 
 var app = Express();
 app.use(Express.json());
-// app.use(cors())
+app.use(cors())
 app.use(bodyParser.json());
 
 var CONNECTION_STRING=process.env.MONGO_URI;
