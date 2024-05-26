@@ -19,7 +19,7 @@ app.use((req, res, next) => {
     // Allow requests from your frontend origin
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
     
-    res.setHeader('Access-Control-Allow-Origin', 'https://main--b-election.netlify.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://b-election.netlify.app/');
 
     
   
