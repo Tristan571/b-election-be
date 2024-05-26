@@ -13,8 +13,20 @@ const OTP = require('./models/OTP');
 
 var app = Express();
 app.use(Express.json());
- //app.use(cors())
+app.use(cors())
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+    // Allow requests from your frontend origin
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  
+    // Allow specific HTTP methods (GET, POST, etc.)
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); 
+  
+    // Allow specific headers (e.g., for authentication)
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); 
+  
+    next();
+  });
 
 var CONNECTION_STRING=process.env.MONGO_URI;
 var PORT=process.env.PORT;
